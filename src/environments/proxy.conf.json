@@ -1,0 +1,7 @@
+{
+  "/api/location/local": {
+      "target": "https://geolocation-db.com/json",
+      "secure": false,
+      "logLevel": "debug"
+  }
+}
