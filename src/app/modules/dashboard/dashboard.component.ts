@@ -7,4 +7,10 @@ import { ApiService } from 'src/app/services/api.service';
   templateUrl: './dashboard.component.html',
   styleUrls: ['./dashboard.component.sass']
 })
-export class DashboardComponent { }
+export class DashboardComponent {
+  public isTemperatureVisible = false;
+
+  public toggleTemperatureVisibility(): void {
+    this.isTemperatureVisible = !this.isTemperatureVisible;
+  }
+}

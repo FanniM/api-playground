@@ -1,5 +1,8 @@
-<button (click)="getCurrentTemperature()">api</button>
-<ng-container>
-  <p>The temperature in {{ location.city }} is:</p>
-  <p>{{ !!temperature ? (temperature + ' °C') : '--'}}</p>
-</ng-container>
+<div class="p-3">
+  <ng-container *ngIf="!!location">
+    <p class="mb-2">The temperature in {{ location.city }} is: {{ !!temperature ? (temperature + ' °C') : '--'}}</p>
+  </ng-container>
+  <ng-container *ngIf="!location">
+    <p>Can't find local location</p>
+  </ng-container>
+</div>

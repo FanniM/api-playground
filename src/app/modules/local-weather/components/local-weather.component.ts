@@ -17,12 +17,15 @@ export class LocalWeatherComponent implements OnInit {
   ) {}
 
   ngOnInit(): void {
-    this.loadPlace();
+    this.loadPlaceAndTemperature();
   }
 
-  private loadPlace(): void {
+  private loadPlaceAndTemperature(): void {
     this.localWeatherService.getLocation().subscribe(
-      locationResponse => this.setPlace(locationResponse)
+      locationResponse => {
+        this.setPlace(locationResponse);
+        this.loadCurrentTemperature();
+      }
     );
   }
 
@@ -30,7 +33,7 @@ export class LocalWeatherComponent implements OnInit {
     this.location = locationResponse;
   }
 
-  public getCurrentTemperature(): void {
+  private loadCurrentTemperature(): void {
     this.localWeatherService.getCurrentTemperature(
       this.location.latitude.toString(),
       this.location.longitude.toString()

@@ -1,4 +1,12 @@
-<div>
-  <h1>Dashboard</h1>
+<div class="my-3">
+  <h1 class="text-center">Dashboard</h1>
 </div>
-<app-local-weather></app-local-weather>
+<div class="d-flex justify-content-center">
+  <button
+    class="btn btn-outline-primary"
+    type="button"
+    (click)="toggleTemperatureVisibility()"
+  >Show locale temperature</button>
+</div>
+
+<app-local-weather *ngIf="isTemperatureVisible"></app-local-weather>
