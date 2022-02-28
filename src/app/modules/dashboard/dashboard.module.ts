@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { DashboardComponent } from './dashboard.component';
+import { LocalWeatherModule } from '../local-weather/local-weather.module';
 
 
 @NgModule({
@@ -8,7 +9,8 @@ import { DashboardComponent } from './dashboard.component';
     DashboardComponent
   ],
   imports: [
-    CommonModule
+    CommonModule,
+    LocalWeatherModule
   ],
   exports: [
     DashboardComponent

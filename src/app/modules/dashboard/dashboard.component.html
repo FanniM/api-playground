@@ -1,8 +1,4 @@
 <div>
   <h1>Dashboard</h1>
 </div>
-<button (click)="getCurrentTemperature()">api</button>
-<ng-container>
-  <p>The temperature in {{ location.city }} is:</p>
-  <p>{{ !!temperature ? (temperature + ' °C') : '--'}}</p>
-</ng-container>
+<app-local-weather></app-local-weather>
