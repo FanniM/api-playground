@@ -1,6 +1,7 @@
-import { HttpClient, HttpHeaders } from '@angular/common/http';
+import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { Observable, of } from 'rxjs';
+import { Observable } from 'rxjs';
+import { LocationResponse } from '@models';
 
 @Injectable({
   providedIn: 'root'
@@ -11,21 +12,9 @@ export class ApiService {
     private http: HttpClient
   ) { }
 
-  public getLocation(): Observable<any> {
-    /**
-     * {
-          "country_code":"US",
-          "country_name":"United States",
-          "city":"Minneapolis",
-          "postal":55455,
-          "latitude":44.9733,
-          "longitude":-93.2323,
-          "IPv4":"126.101.76.251",
-          "state":"Minnesota"
-      }
-     */
+  public getLocation(): Observable<LocationResponse> {
     const url = '/api/location/local';
-    return this.http.get(url);
+    return this.http.get(url) as Observable<LocationResponse>;
   }
 
   public getCurrentTemperature(latitude: string, longitude: string): Observable<any> {
