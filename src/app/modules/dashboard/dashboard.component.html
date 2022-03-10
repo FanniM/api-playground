@@ -7,19 +7,19 @@
     class="btn btn-outline-primary mx-1"
     type="button"
     (click)="toggleTemperatureVisibility()"
-  >Show local temperature</button>
+  >{{ isTemperatureVisible ? 'Hide' : 'Show'}} local temperature</button>
   <button
     class="btn btn-outline-primary mx-1"
     type="button"
     (click)="toggleCreatePasswordVisibility()"
-  >Show password generator</button>
+  >{{ isCreatePasswordVisible ? 'Hide' : 'Show'}} password generator</button>
 </div>
 
 <div class="row my-1">
-  <div class="col-sm-4 mx-1" *ngIf="isTemperatureVisible">
+  <div class="col-sm-4 m-1" *ngIf="isTemperatureVisible">
     <app-local-weather></app-local-weather>
   </div>
-  <div class="col-sm-4 mx-1" *ngIf="isCreatePasswordVisible">
+  <div class="col-sm-4 m-1" *ngIf="isCreatePasswordVisible">
     <app-random-password></app-random-password>
   </div>
 </div>
