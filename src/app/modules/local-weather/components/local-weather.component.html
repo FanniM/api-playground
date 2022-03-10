@@ -4,7 +4,6 @@
     <ng-container *ngIf="!!location">
       <span class="card-text">The temperature in {{ location.city }} is:</span>
       <h5 class="card-title mt-2 mb-3">{{ !!temperature ? (temperature + ' °C') : '--'}}</h5>
-
     </ng-container>
     <ng-container *ngIf="!location">
       <span class="card-text">Can't find local location</span>
