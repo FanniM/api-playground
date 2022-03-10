@@ -1,8 +1,13 @@
-<div class="px-3 py-1">
-  <ng-container *ngIf="!!location">
-    <p>The temperature in {{ location.city }} is: {{ !!temperature ? (temperature + ' °C') : '--'}}</p>
-  </ng-container>
-  <ng-container *ngIf="!location">
-    <p>Can't find local location</p>
-  </ng-container>
+<div class="card text-center">
+  <h5 class="card-header">Local Temperature</h5>
+  <div class="card-body">
+    <ng-container *ngIf="!!location">
+      <span class="card-text">The temperature in {{ location.city }} is:</span>
+      <h5 class="card-title mt-2 mb-3">{{ !!temperature ? (temperature + ' °C') : '--'}}</h5>
+
+    </ng-container>
+    <ng-container *ngIf="!location">
+      <span class="card-text">Can't find local location</span>
+    </ng-container>
+  </div>
 </div>
