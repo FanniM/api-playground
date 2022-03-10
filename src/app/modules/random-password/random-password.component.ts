@@ -73,4 +73,8 @@ export class RandomPasswordComponent implements OnInit {
       block.substring(randIndex + 1)
     );
   }
+
+  public copyPasswordToClipboard(): void {
+    navigator.clipboard.writeText(this.randomPassword);
+  }
 }
