@@ -13,7 +13,7 @@ export class ApiService {
   ) { }
 
   public getLocation(): Observable<LocationResponse> {
-    const url = '/api/location/local';
+    const url = 'https://geolocation-db.com/json/api/location/local';
     return this.http.get(url) as Observable<LocationResponse>;
   }
 
