@@ -2,6 +2,7 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { DashboardComponent } from './dashboard.component';
 import { LocalWeatherModule } from '../local-weather/local-weather.module';
+import { RandomPasswordModule } from '../random-password/random-password.module';
 
 
 @NgModule({
@@ -10,7 +11,8 @@ import { LocalWeatherModule } from '../local-weather/local-weather.module';
   ],
   imports: [
     CommonModule,
-    LocalWeatherModule
+    LocalWeatherModule,
+    RandomPasswordModule
   ],
   exports: [
     DashboardComponent
