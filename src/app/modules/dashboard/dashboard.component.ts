@@ -10,7 +10,7 @@ import { ApiService } from 'src/app/services/api.service';
 export class DashboardComponent {
   public isTemperatureVisible = false;
   public isCreatePasswordVisible = false;
-
+  public isBrilesLocationVisible = false;
 
   public toggleTemperatureVisibility(): void {
     this.isTemperatureVisible = !this.isTemperatureVisible;
@@ -18,6 +18,10 @@ export class DashboardComponent {
 
   public toggleCreatePasswordVisibility(): void {
     this.isCreatePasswordVisible = !this.isCreatePasswordVisible;
+  }
+
+  toggleWhereIsBriles(): void {
+    this.isBrilesLocationVisible = !this.isBrilesLocationVisible;
   }
 
 }
