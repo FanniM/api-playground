@@ -1,16 +1,14 @@
-<div class="my-3" *ngIf="false">
+<div class="my-3">
   <h1 class="text-center">Dashboard</h1>
 </div>
 
 <div class="d-flex justify-content-center my-1">
   <button
-    *ngIf="false"
     class="btn btn-primary mx-1"
     type="button"
     (click)="toggleTemperatureVisibility()"
   >{{ isTemperatureVisible ? 'Hide' : 'Show'}} local temperature</button>
   <button
-    *ngIf="false"
     class="btn btn-primary mx-1"
     type="button"
     (click)="toggleCreatePasswordVisibility()"
@@ -23,12 +21,14 @@
 </div>
 
 <div class="row my-1">
-  <div class="col-sm-4 m-1" *ngIf="isTemperatureVisible">
+  <div class="col-sm-4 p-1" *ngIf="isTemperatureVisible">
     <app-local-weather></app-local-weather>
   </div>
-  <div class="col-sm-4 m-1" *ngIf="isCreatePasswordVisible">
+  <div class="col-sm-4 p-1" *ngIf="isCreatePasswordVisible">
     <app-random-password></app-random-password>
   </div>
-  <h1 *ngIf="isBrilesLocationVisible" class="text-center text-uppercase">Qui non c'è</h1>
+  <div class="col-sm-4 p-1" *ngIf="isBrilesLocationVisible">
+    <h1 class="text-center text-uppercase">Adesso c'è</h1>
+  </div>
 </div>
 
