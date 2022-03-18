@@ -8,8 +8,10 @@ import { Component, OnInit } from "@angular/core";
 export class RandomPasswordComponent implements OnInit {
   public randomPassword = null;
   public symbols: string[] = ["(", ")", ".", ";", "#", "!", "?"];
+  public showProgressBar = false;
 
   ngOnInit() {
+    this.showProgressBar = true;
     this.randomPassword = this.createRandomPassword();
   }
 
@@ -76,5 +78,9 @@ export class RandomPasswordComponent implements OnInit {
 
   public copyPasswordToClipboard(): void {
     navigator.clipboard.writeText(this.randomPassword);
+  }
+
+  public onProgressCompleted(isProgressCompleted: boolean): void {
+    this.showProgressBar = !isProgressCompleted;
   }
 }
