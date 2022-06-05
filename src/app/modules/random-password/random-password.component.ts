@@ -1,16 +1,26 @@
-import { Component, OnInit } from "@angular/core";
+import { Component } from "@angular/core";
+import { FormBuilder } from "@angular/forms";
 
 @Component({
   selector: "app-random-password",
   templateUrl: "./random-password.component.html",
   styleUrls: ["./random-password.component.sass"],
 })
-export class RandomPasswordComponent implements OnInit {
+export class RandomPasswordComponent {
   public randomPassword = null;
   public symbols: string[] = ["(", ")", ".", ";", "#", "!", "?"];
   public showProgressBar = false;
 
-  ngOnInit() {
+  passwordForm = this.formBuilder.group({
+    useSymbols: false,
+    useCapitalLetters: false
+  });
+
+  constructor(
+    private formBuilder: FormBuilder
+  ) {}
+
+  public generatePassword(): void {
     this.showProgressBar = true;
     this.randomPassword = this.createRandomPassword();
   }
@@ -30,20 +40,24 @@ export class RandomPasswordComponent implements OnInit {
 
     block = this.getRandomSubstring(block, length);
 
-    for (
-      let index = 0;
-      index < Math.floor(Math.random() * block.length);
-      index++
-    ) {
-      block = this.setCharAtRandomIndexInUpperCase(block);
+    if (this.passwordForm.controls.useCapitalLetters.value) {
+      for (
+        let index = 0;
+        index < Math.floor(Math.random() * block.length);
+        index++
+      ) {
+        block = this.setCharAtRandomIndexInUpperCase(block);
+      }
     }
 
-    for (
-      let index = 0;
-      index < Math.floor(Math.random() * block.length);
-      index++
-    ) {
-      block = this.substituteCharWithRandomSymbol(block);
+    if (this.passwordForm.controls.useSymbols.value) {
+      for (
+        let index = 0;
+        index < Math.floor(Math.random() * block.length);
+        index++
+      ) {
+        block = this.substituteCharWithRandomSymbol(block);
+      }
     }
 
     return block;
