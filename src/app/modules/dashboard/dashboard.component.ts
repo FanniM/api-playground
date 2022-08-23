@@ -11,6 +11,7 @@ export class DashboardComponent {
   public isTemperatureVisible = false;
   public isCreatePasswordVisible = false;
   public isBrilesLocationVisible = false;
+  public isMosaicVisible = false;
 
   public toggleTemperatureVisibility(): void {
     this.isTemperatureVisible = !this.isTemperatureVisible;
@@ -20,8 +21,12 @@ export class DashboardComponent {
     this.isCreatePasswordVisible = !this.isCreatePasswordVisible;
   }
 
-  toggleWhereIsBriles(): void {
+  public toggleWhereIsBriles(): void {
     this.isBrilesLocationVisible = !this.isBrilesLocationVisible;
+  }
+
+  public toggleMosaicVisibility(): void {
+    this.isMosaicVisible = !this.isMosaicVisible;
   }
 
 }

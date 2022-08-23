@@ -4,6 +4,7 @@ import { DashboardComponent } from './dashboard.component';
 import { LocalWeatherModule } from '../local-weather/local-weather.module';
 import { RandomPasswordModule } from '../random-password/random-password.module';
 import { RouterModule, Routes } from '@angular/router';
+import { MosaicModule } from '../mosaic/mosaic.module';
 
 const routes: Routes = [
   {
@@ -20,7 +21,8 @@ const routes: Routes = [
     RouterModule.forChild(routes),
     CommonModule,
     LocalWeatherModule,
-    RandomPasswordModule
+    RandomPasswordModule,
+    MosaicModule
   ],
   exports: [
     DashboardComponent,

@@ -1,0 +1,12 @@
+<div class="card text-center">
+  <h5 class="card-header">Mosaic</h5>
+  <div class="card-body">
+    <ng-container *ngFor="let row of mosaicTable">
+      <div class="row">
+        <ng-container *ngFor="let cell of row">
+          <div class="square p-0 m-0" [style.background-color]="cell"></div>
+        </ng-container>
+      </div>
+    </ng-container>
+  </div>
+</div>

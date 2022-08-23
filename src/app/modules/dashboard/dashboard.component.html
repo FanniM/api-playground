@@ -18,6 +18,11 @@
     type="button"
     (click)="toggleWhereIsBriles()"
   >Ma Briles dov'è?</button>
+  <button
+    class="btn btn-primary mx-1"
+    type="button"
+    (click)="toggleMosaicVisibility()"
+  >{{ isMosaicVisible ? 'Hide' : 'Show'}} mosaic</button>
 </div>
 
 <div class="row my-1">
@@ -29,6 +34,9 @@
   </div>
   <div class="col-sm-4 p-1" *ngIf="isBrilesLocationVisible">
     <h1 class="text-center text-uppercase">Adesso c'è</h1>
+  </div>
+  <div class="col-sm-4 p-1" *ngIf="isMosaicVisible">
+    <app-mosaic></app-mosaic>
   </div>
 </div>
 
