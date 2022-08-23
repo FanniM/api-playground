@@ -24,6 +24,8 @@ export class LoginFormComponent {
       this.loginForm.controls.username.value !== 'user' ||
       this.loginForm.controls.password.value !== 'user'
     ) {
+      alert('Credenziali errate');
+      this.loginForm.reset();
       return;
     }
     this.saveLoggedIn();
