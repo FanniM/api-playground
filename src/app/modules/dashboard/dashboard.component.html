@@ -4,21 +4,25 @@
 
 <div class="d-flex justify-content-center my-1">
   <button
+    *ngIf="true"
     class="btn btn-primary mx-1"
     type="button"
     (click)="toggleTemperatureVisibility()"
   >{{ isTemperatureVisible ? 'Hide' : 'Show'}} local temperature</button>
   <button
+    *ngIf="true"
     class="btn btn-primary mx-1"
     type="button"
     (click)="toggleCreatePasswordVisibility()"
   >{{ isCreatePasswordVisible ? 'Hide' : 'Show'}} password generator</button>
   <button
+    *ngIf="false"
     class="btn btn-primary mx-1"
     type="button"
     (click)="toggleWhereIsBriles()"
   >Ma Briles dov'è?</button>
   <button
+    *ngIf="true"
     class="btn btn-primary mx-1"
     type="button"
     (click)="toggleMosaicVisibility()"
